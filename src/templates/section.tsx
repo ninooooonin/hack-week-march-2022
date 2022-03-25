@@ -10,6 +10,22 @@ const Container = styled.div`
     &:first-child {
         margin-top:  0px;
     }
+
+    &.with-sub-section {
+        margin-top:  15px;
+        border-top: 1px solid #F2F2F2;
+        border-bottom: 1px solid #F2F2F2;
+        padding: 15px 0px 18px;
+
+        .form-section {
+            margin-top:  15px;
+
+            .section-title {
+                font-size: 13.5px;
+                opacity: 0.75;
+            }
+        }
+    }
 `
 
 export const FormField = styled.div`
@@ -26,12 +42,11 @@ const Header =  styled(Row)`
 `
 
 const Section = (props: any) => {
-    const { title, children } = props;
-
+    const { title, children, multiple } = props;
     return (
-        <Container>
+        <Container className={`form-section ${multiple ? 'with-sub-section': ''}`}>
             <Header>
-                <Paragraph>{title}</Paragraph>
+                <Paragraph className={'section-title'}>{title}</Paragraph>
             </Header>
             { children }
         </Container>
