@@ -89,12 +89,13 @@ export const FieldRadio = styled.button`
     }
 `
 
-// TODO: Move to separate FieldSelect
+// TODO: Move to separate component
 const TabItem = (props: any) => {
     const { text, isActive, onClick } = props;
     return <button className={`${isActive ? 'active': ''}`} onClick={onClick}>{text}</button>
 }
 
+// TODO: Move to separate component
 export const FormFieldRow = styled(Row)`
     margin-top: 8px;
 
@@ -120,59 +121,6 @@ export const FormFieldRow = styled(Row)`
 
             &:first-child {
                 margin-left: 0px;
-            }
-        }
-    }
-`
-
-const BottomActionContainer = styled(Row)`
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    width: 100%;
-    position: absolute;
-    padding: 0px 20px;
-    bottom: 0px;
-    border-top: 1px solid #F2F2F2;
-
-    button {
-        font-family: var(--font-medium);
-        font-size: 14px;
-        padding: 0px;
-        background-color: transparent;
-        border: none;
-        height: 32px;
-        cursor: pointer;
-
-        &.back-action {
-            opacity: 0.75;
-            
-            &:hover {
-                opacity: 1;
-            }
-        }
-
-        &.reset-action {
-            padding: 0px 12px;
-            height: 32px;
-            opacity: 0.5;
-
-            &:hover {
-                opacity: 1;
-            }
-        }
-
-        &.preview-action {
-            border-radius: 3px;
-            height: 32px;
-            color: #FFFFFF;
-            padding: 0px 12px;
-            margin-left: 8px;
-            background-color: #4242C3;
-
-            &:hover {
-                opacity: 1;
-                background-color: #5151ee;
             }
         }
     }
